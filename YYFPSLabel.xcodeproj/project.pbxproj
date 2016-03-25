@@ -15,6 +15,7 @@
 		644B6DDB1CA4448100971338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644B6DD91CA4448100971338 /* LaunchScreen.storyboard */; };
 		644B6DE61CA4448100971338 /* YYFPSLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 644B6DE51CA4448100971338 /* YYFPSLabelTests.m */; };
 		644B6DF31CA444A800971338 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 644B6DF21CA444A800971338 /* YYFPSLabel.m */; };
+		6450F40C1CA4C4A50091FA00 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6450F40B1CA4C4A50091FA00 /* YYWeakProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		644B6DE71CA4448100971338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644B6DF11CA444A800971338 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		644B6DF21CA444A800971338 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		6450F40A1CA4C4A50091FA00 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		6450F40B1CA4C4A50091FA00 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 		644B6DF01CA444A800971338 /* YYFPSLabel */ = {
 			isa = PBXGroup;
 			children = (
+				6450F40A1CA4C4A50091FA00 /* YYWeakProxy.h */,
+				6450F40B1CA4C4A50091FA00 /* YYWeakProxy.m */,
 				644B6DF11CA444A800971338 /* YYFPSLabel.h */,
 				644B6DF21CA444A800971338 /* YYFPSLabel.m */,
 			);
@@ -228,6 +233,7 @@
 				644B6DD01CA4448100971338 /* AppDelegate.m in Sources */,
 				644B6DF31CA444A800971338 /* YYFPSLabel.m in Sources */,
 				644B6DCD1CA4448100971338 /* main.m in Sources */,
+				6450F40C1CA4C4A50091FA00 /* YYWeakProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +420,7 @@
 				644B6DEC1CA4448100971338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		644B6DED1CA4448100971338 /* Build configuration list for PBXNativeTarget "YYFPSLabelTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				644B6DEF1CA4448100971338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

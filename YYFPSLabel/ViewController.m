@@ -30,6 +30,11 @@
     _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
     [_fpsLabel sizeToFit];
     [self.view addSubview:_fpsLabel];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 移除也不能使 label里的 timer invalidate
+        [_fpsLabel removeFromSuperview];
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

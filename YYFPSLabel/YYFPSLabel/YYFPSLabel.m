@@ -7,6 +7,7 @@
 //
 
 #import "YYFPSLabel.h"
+#import "YYWeakProxy.h"
 
 #define kSize CGSizeMake(55, 20)
 
@@ -40,15 +41,17 @@
         _subFont = [UIFont fontWithName:@"Courier" size:4];
     }
     
-    __weak typeof(self) weakSelf = self;
-    _link = [CADisplayLink displayLinkWithTarget:weakSelf selector:@selector(tick:)];
-
+    // 如果直接用 self 或者 weakSelf，都不能解决循环引用问题
+    _link = [CADisplayLink displayLinkWithTarget:[YYWeakProxy proxyWithTarget:self] selector:@selector(tick:)];
+//    __weak typeof(self) weakSelf = self;
+//    _link = [CADisplayLink displayLinkWithTarget:weakSelf selector:@selector(tick:)];
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     return self;
 }
 
 - (void)dealloc {
     [_link invalidate];
+    NSLog(@"timer release");
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
