@@ -3,4 +3,4 @@
 
 效果如下：
 
-![demo.gif]
+![](demo.gif)
