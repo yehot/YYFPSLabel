@@ -4,3 +4,7 @@
 效果如下：
 
 ![](demo.gif)
+
+对于代码的学习和探讨：
+[iOS查看当前界面帧数](http://www.jianshu.com/p/878bfd38666d)
+
