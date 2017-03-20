@@ -42,10 +42,14 @@
     }
     
     // 如果直接用 self 或者 weakSelf，都不能解决循环引用问题
+    
+    // 将 timer 的 target 从 self ，变成了中间人 NSProxy
+    // timer 调用 target 的 selector 时，会被 NSProxy 内部转调用 self 的 selector
     _link = [CADisplayLink displayLinkWithTarget:[YYWeakProxy proxyWithTarget:self] selector:@selector(tick:)];
 //    __weak typeof(self) weakSelf = self;
 //    _link = [CADisplayLink displayLinkWithTarget:weakSelf selector:@selector(tick:)];
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    
     return self;
 }
 
@@ -73,6 +77,10 @@
     
     CGFloat progress = fps / 60.0;
     UIColor *color = [UIColor colorWithHue:0.27 * (progress - 0.2) saturation:1 brightness:0.9 alpha:1];
+    
+    NSString *text1 = [NSString stringWithFormat:@"%d FPS",(int)round(fps)];
+    NSLog(@"%@", text1);
+
     
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d FPS",(int)round(fps)]];
     [text addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, text.length - 3)];

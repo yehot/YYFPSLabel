@@ -106,7 +106,7 @@
     
     NSString *text = [NSString stringWithFormat:@"%d FPS",(int)round(fps)];
 
-    // 尝试1：主线程阻塞，但是 这里就不能获取到主线程了
+    // 尝试1：主线程阻塞， 这里就不能获取到主线程了
 //    dispatch_async(dispatch_get_main_queue(), ^{
 //        //  阻塞时，想通过 在主线程更新UI 来查看是不可行了
 //        label_.text = text;
